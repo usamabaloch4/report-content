@@ -1,0 +1,119 @@
+/**
+ * Report Content - Admin CSS
+ */
+
+/* Status indicators */
+.report-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-pending {
+    background-color: #fcf8e3;
+    color: #8a6d3b;
+}
+
+.status-resolved {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.status-dismissed {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+/* Hidden post status */
+.hidden-status {
+    margin-left: 5px;
+    font-size: 12px;
+    color: #a94442;
+    background: #f2dede;
+    padding: 3px 6px;
+    border-radius: 3px;
+}
+
+/* Action buttons */
+.column-actions .button {
+    margin: 2px 0;
+}
+
+.action-resolve {
+    color: #3c763d;
+    border-color: #3c763d;
+}
+
+.action-resolve:hover {
+    background-color: #dff0d8;
+}
+
+.action-dismiss {
+    color: #a94442;
+    border-color: #a94442;
+}
+
+.action-dismiss:hover {
+    background-color: #f2dede;
+}
+
+.action-hide {
+    color: #8a6d3b;
+    border-color: #8a6d3b;
+}
+
+.action-hide:hover {
+    background-color: #fcf8e3;
+}
+
+.action-unhide {
+    color: #31708f;
+    border-color: #31708f;
+}
+
+.action-unhide:hover {
+    background-color: #d9edf7;
+}
+
+/* Column widths */
+.column-id {
+    width: 60px;
+}
+
+.column-status {
+    width: 100px;
+}
+
+.column-actions {
+    width: 200px;
+}
+
+.column-date {
+    width: 120px;
+}
+
+.column-user {
+    width: 150px;
+}
+
+/* Admin settings page */
+.form-table .report-content-reasons-field textarea {
+    height: 150px;
+}
+
+/* Make tables responsive */
+@media screen and (max-width: 782px) {
+    .column-id,
+    .column-status,
+    .column-actions,
+    .column-date,
+    .column-user {
+        width: auto;
+    }
+
+    .column-actions .button {
+        margin: 3px 3px 3px 0;
+    }
+}

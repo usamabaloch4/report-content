@@ -1,0 +1,139 @@
+/**
+ * Report Content - Public CSS
+ */
+
+.report-content-container {
+    margin-top: 30px;
+    padding: 15px;
+    border-top: 1px solid #eee;
+    position: relative;
+}
+
+.report-content-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: #f7f7f7;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.report-content-button:hover {
+    background-color: #eee;
+    color: #d63638;
+}
+
+.report-content-button .dashicons {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.report-content-form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.report-content-form h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.report-content-reasons {
+    margin-bottom: 20px;
+}
+
+.report-content-reason {
+    margin-bottom: 10px;
+}
+
+.report-content-reason label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.report-content-reason input[type="radio"] {
+    margin-top: 3px;
+    margin-right: 8px;
+}
+
+.report-content-reason textarea {
+    width: 100%;
+    margin-top: 8px;
+    margin-left: 22px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.report-content-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.report-content-submit,
+.report-content-cancel {
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.report-content-submit {
+    background-color: #2271b1;
+    color: white;
+    border: 1px solid #2271b1;
+}
+
+.report-content-submit:hover {
+    background-color: #135e96;
+}
+
+.report-content-cancel {
+    background-color: #f7f7f7;
+    color: #555;
+    border: 1px solid #ccc;
+}
+
+.report-content-cancel:hover {
+    background-color: #eee;
+}
+
+.report-content-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+}
+
+.report-content-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+.report-content-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+.report-content-hidden-message {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #fcf8e3;
+    border: 1px solid #faebcc;
+    border-radius: 4px;
+    color: #8a6d3b;
+}
