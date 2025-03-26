@@ -164,18 +164,34 @@ class ReportContentSettings {
     /**
      * Sanitize report reasons array.
      *
-     * @param array $reasons The array of report reasons.
+     * @param array|string $value The array or JSON string of report reasons.
      * @return array Sanitized array of report reasons.
      */
     public function sanitizeReasons($value) {
+        // If value is empty, return default reason
         if (empty($value)) {
             return array(
                 'inappropriate' => 'Inappropriate Content'
             );
         }
 
-        // Try to decode JSON
-        $reasons = json_decode($value, true);
+        $reasons = $value;
+        
+        // Handle JSON string input
+        if (is_string($value)) {
+            $decoded = json_decode($value, true);
+            if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
+                $reasons = $decoded;
+            } else {
+                // If JSON decode fails, try to handle serialized data
+                $unserialized = maybe_unserialize($value);
+                if (is_array($unserialized)) {
+                    $reasons = $unserialized;
+                }
+            }
+        }
+
+        // Ensure we're working with an array
         if (!is_array($reasons)) {
             return array(
                 'inappropriate' => 'Inappropriate Content'
@@ -184,6 +200,7 @@ class ReportContentSettings {
 
         $sanitized = array();
         foreach ($reasons as $key => $label) {
+            // Only include non-empty keys and labels
             if (!empty($key) && !empty($label)) {
                 $sanitized[sanitize_key($key)] = sanitize_text_field($label);
             }
