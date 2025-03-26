@@ -19,6 +19,22 @@ if (!defined('ABSPATH')) {
         
         <table class="form-table">
             <tr>
+                <th scope="row"><?php esc_html_e('Disable on Pages', 'report-content'); ?></th>
+                <td>
+                    <fieldset>
+                        <legend class="screen-reader-text">
+                            <span><?php esc_html_e('Disable on Pages', 'report-content'); ?></span>
+                        </legend>
+                        <label for="report_content_disable_on_pages">
+                            <input name="report_content_disable_on_pages" type="checkbox" id="report_content_disable_on_pages" value="1" <?php checked('1', get_option('report_content_disable_on_pages')); ?>>
+                            <?php esc_html_e('Disable reporting functionality on Pages', 'report-content'); ?>
+                        </label>
+                        <p class="description"><?php esc_html_e('If checked, users will not be able to report Pages, only Posts and other content types.', 'report-content'); ?></p>
+                    </fieldset>
+                </td>
+            </tr>
+            
+            <tr>
                 <th scope="row"><?php esc_html_e('Auto-hide reported posts', 'report-content'); ?></th>
                 <td>
                     <fieldset>

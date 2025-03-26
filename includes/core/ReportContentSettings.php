@@ -26,6 +26,7 @@ class ReportContentSettings {
             'autoHide' => get_option('report_content_auto_hide', '0'),
             'minReports' => get_option('report_content_min_reports', '3'),
             'makePrivate' => get_option('report_content_make_private', '0'),
+            'disableOnPages' => get_option('report_content_disable_on_pages', '0'),
             'reasons' => get_option('report_content_reasons', array(
                 'inappropriate' => 'Inappropriate Content',
                 'spam' => 'Spam',
@@ -92,6 +93,17 @@ class ReportContentSettings {
         register_setting(
             'report_content_settings',
             'report_content_make_private',
+            array(
+                'type' => 'string',
+                'sanitize_callback' => array($this, 'sanitizeCheckbox'),
+                'default' => '0',
+            )
+        );
+
+        // Disable on pages setting
+        register_setting(
+            'report_content_settings',
+            'report_content_disable_on_pages',
             array(
                 'type' => 'string',
                 'sanitize_callback' => array($this, 'sanitizeCheckbox'),

@@ -90,8 +90,14 @@ class ReportContentPublic {
             return $content;
         }
 
-        // Don't add to posts that are hidden
         global $post;
+
+        // Skip pages if disabled in settings
+        if (is_page() && $this->settings->getSetting('disable_on_pages', '0') === '1') {
+            return $content;
+        }
+
+        // Don't add to posts that are hidden
         if ($this->postHandler->isPostHidden($post->ID)) {
             return $this->getHiddenContentMessage();
         }
